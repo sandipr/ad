@@ -1,0 +1,10 @@
+
+{
+  "nodes": {
+    "u1": {"id": "u1", "type": "User", "properties": {"group": "Staff"}},
+    "g1": {"id": "g1", "type": "Group", "properties": {"name": "Domain Admins"}}
+  },
+  "edges": [
+    {"fromNodeId": "u1", "toNodeId": "g1", "type": "MemberOf"}
+  ]
+}

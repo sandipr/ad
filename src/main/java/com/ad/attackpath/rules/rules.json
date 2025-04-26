@@ -1,0 +1,19 @@
+
+[
+  {
+    "ruleId": "privilege_escalation",
+    "description": "Find user paths to Domain Admins",
+    "startNode": { "type": "User", "conditions": ["group != \"Domain Admins\""] },
+    "endNode": { "type": "Group", "conditions": ["name == \"Domain Admins\""] },
+    "allowedEdges": [
+      {
+        "type": "MemberOf",
+        "repeat": true,
+        "maxRepeats": 3,
+        "direction": "outgoing"
+      }
+    ],
+    "traversalAlgorithm": "BFS",
+    "maxDepth": 5
+  }
+]
